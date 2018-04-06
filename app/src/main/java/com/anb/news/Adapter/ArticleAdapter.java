@@ -21,11 +21,11 @@ import java.util.ArrayList;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleViewHolder> {
 
     Context context;
-    ArrayList<Article> articleList;
+    ArrayList<Article> articles;
 
-    public ArticleAdapter(Context context, ArrayList<Article> articleList) {
+    public ArticleAdapter(Context context, ArrayList<Article> articles) {
         this.context = context;
-        this.articleList = articleList;
+        this.articles = articles;
     }
 
     @Override
@@ -37,16 +37,16 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
     @Override
     public void onBindViewHolder(ArticleViewHolder holder, int position) {
-        Picasso.get().load(articleList.get(position).urlToImage).into(holder.imgNews);
-        holder.txtSource.setText(articleList.get(position).source);
-        holder.txtTitle.setText(articleList.get(position).title);
-        holder.txtAuthor.setText(articleList.get(position).author);
-        holder.txtDatePublished.setText(articleList.get(position).publishedAt);
+        Picasso.get().load(articles.get(position).urlToImage).into(holder.imgNews);
+        holder.txtSource.setText(articles.get(position).source.name);
+        holder.txtTitle.setText(articles.get(position).title);
+        holder.txtAuthor.setText(articles.get(position).author);
+        holder.txtDatePublished.setText(articles.get(position).publishedAt);
     }
 
     @Override
     public int getItemCount() {
-        return articleList.size();
+        return articles.size();
     }
 
     class ArticleViewHolder extends RecyclerView.ViewHolder{
@@ -58,7 +58,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
         public ArticleViewHolder(View itemView) {
             super(itemView);
-            imgNews = itemView.findViewById(R.id.);
+            imgNews = itemView.findViewById(R.id.imgItemCard);
             txtSource = itemView.findViewById(R.id.txtSource);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtAuthor = itemView.findViewById(R.id.txtAuthor);

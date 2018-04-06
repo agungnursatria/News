@@ -10,4 +10,7 @@ public class Constant {
 
     public static final String API_KEY = BuildConfig.NEWS_API_KEY;
 
+    public static final String TITLE_KEY = "TITLE";
+
+    public static final String IGN_SOURCE = "abc-news";
 }
