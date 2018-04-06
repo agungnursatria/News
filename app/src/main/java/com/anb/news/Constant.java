@@ -7,10 +7,6 @@ package com.anb.news;
 public class Constant {
 
     public static final String BASE_URL = "https://newsapi.org/v2/";
-
     public static final String API_KEY = BuildConfig.NEWS_API_KEY;
-
-    public static final String TITLE_KEY = "TITLE";
-
-    public static final String IGN_SOURCE = "abc-news";
+    public static final String IGN_SOURCE = "ign";
 }
